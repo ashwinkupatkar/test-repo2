@@ -1,0 +1,15 @@
+import "tfplan/v2" as tfplan
+import "strings"
+
+param allowed_servers default [ "10.0.0.4", "10.0.0.5", ]
+
+ensure_allowed_dns_servers = func(allowed_servers) {
+    allowed_server_list = allowed_servers
+    print("Allowed server list: ", allowed_server_list)
+    print("\nAllowed servers: ", allowed_servers)
+    return false
+}
+
+main = rule {
+    test_function(allowed_servers)
+}
