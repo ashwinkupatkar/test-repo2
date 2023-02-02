@@ -19,4 +19,3 @@ policy "test_param" {
     source = "./test_param.sentinel"
     enforcement_level = "soft-mandatory"
 }
-~      
