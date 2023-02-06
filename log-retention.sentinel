@@ -23,10 +23,10 @@ get_log_retention_threshold_value = func() {
 }
 
 ensure_log_retention = rule { 
-     threshold_value = get_log_retention_threshold_value()
+     threshold_val = get_log_retention_threshold_value()
 
      all allResources as _, rs {
-         rs.change.after.retention_in_days > threshold_value
+         rs.change.after.retention_in_days > threshold_val
    }   
 }
 
