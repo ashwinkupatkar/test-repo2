@@ -3,7 +3,7 @@ import "strings"
 
 param allowed_servers default [ "10.0.0.4", "10.0.0.5", ]
 
-policy_id = "SECPOL001"
+policy_id = "SECPOL002"
 
 test_function = func(allowed_servers) {
     allowed_server_list = allowed_servers
