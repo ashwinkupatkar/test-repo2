@@ -1,5 +1,6 @@
 import "tfplan/v2" as tfplan
 import "strings"
+import "exemptions"
 
 param allowed_servers default [ "10.0.0.4", "10.0.0.5", ]
 
