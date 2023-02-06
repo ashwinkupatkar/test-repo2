@@ -3,6 +3,8 @@ import "strings"
 
 param allowed_servers default [ "10.0.0.4", "10.0.0.5", ]
 
+policy_id = "SECPOL001"
+
 test_function = func(allowed_servers) {
     allowed_server_list = allowed_servers
     print("Allowed server list: ", allowed_server_list)
@@ -10,6 +12,10 @@ test_function = func(allowed_servers) {
     return false
 }
 
-main = rule {
+sentinel_eval = rule when exemptions.is_exempt(policy_id) is false {
     test_function(allowed_servers)
+}
+
+main = rule {
+    sentinel_eval
 }
