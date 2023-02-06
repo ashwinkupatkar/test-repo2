@@ -13,7 +13,7 @@ test_function = func(allowed_servers) {
     return false
 }
 
-sentinel_eval = rule when exemptions.is_exempt(policy_id) is false {
+sentinel_eval = rule when exemptions.is_exempt(policy_id) is false else true {
     test_function(allowed_servers)
 }
 
