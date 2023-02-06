@@ -1,4 +1,7 @@
 import "tfplan/v2" as tfplan
+import "exemptions"
+
+policy_id = "SECPOL001"
 
 allStorageAccounts = filter tfplan.resource_changes as _, rc {
         rc.type is "azurerm_storage_account" and 
@@ -42,11 +45,14 @@ identity_type = rule when identity_block_exists is true {
 }
 
 
-main = rule {
-   cross_tenant_replication_enabled and 
+sentinel_eval = rule when exemptions.is_exempt(policy_id) is false {
+   cross_tenant_replication_enabled and
    disallow_nested_items_to_be_public and
    shared_access_key_enabled and
    identity_block_exists else false and
    identity_type
+}
+main = rule {
+   sentinel_eval
 }
 
