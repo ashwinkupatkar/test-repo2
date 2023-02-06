@@ -6,6 +6,9 @@ is_exempt = func(id) {
 
 workspace_exemptions = {
 	"SECPOL001": [
+  	"wws-cyFyScqFd2HTR5i2",
+  ],
+  	"SECPOL002": [
   	"ws-cyFyScqFd2HTR5i2",
   ],
 }
