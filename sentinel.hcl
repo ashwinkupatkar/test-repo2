@@ -10,7 +10,7 @@ module "tfconfig-functions" {
     source = "./common-functions/tfconfig-functions/tfconfig-functions.sentinel"
 }
 
-module "tfconfig-functions" {
+module "exemptions" {
     source = "./common-functions/exemptions.sentinel"
 }
 policy "storage-account-settings2" {
