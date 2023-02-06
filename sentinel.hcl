@@ -17,10 +17,8 @@ policy "storage-account-settings2" {
     source = "./storage-account-settings2.sentinel"
     enforcement_level = "soft-mandatory"
 }
-
-/*    
+   
 policy "test_param" {
     source = "./test_param.sentinel"
     enforcement_level = "soft-mandatory"
 }
-*/
